@@ -58,7 +58,7 @@ prevent well-meaning trusted sysadmins from accidentally doing stupid things. It
 to secure your systems from malicious code. That security layer is moved up, onto the maintainer,
 who must verify the sanity of all code they are sending to client machines.
 
-Specifically: Since DISCO use a unionfs and chroot for the restricted bash shell, I am confiden
+Specifically: Since DISCO use a unionfs and chroot for the restricted bash shell, I am confident
 that your physical disk is safe from accidental modifications (everything is captured on the
 scratchpad, with the exception of writes to /proc and /sys, which are read-only and simply discarded).
 The bit that I can't promise is that one of your module maintainers won't find a way to kill a
@@ -101,7 +101,7 @@ filenames, and the values being their contents. This format was chosen because i
 created from any number of other existing datasources, and doesn't tie DISCO to any one particular
 tool (cobbler, etc). The admin is free to create this structure on the server however they please.
 
-Given this, disco does not use a config file, all configuration parameters are present in this
+Given this, disco does not use a config file. All configuration parameters are present in this
 tree.
 
 There are only two possible toplevel paths, /disco and /NODE_NAME. NODE_NAME is equal to the
@@ -111,7 +111,7 @@ operation, and is accessible as a filesystem tree (or the disco-param command wh
 bash wrapper). These parameters appear in /var/disco/parameters on the client and server, and 
 default values can be found there in the client/server install before the first run of the client.
 
-    /disco/client/cmds/rsync : The rsync command to use when synching
+    /disco/client/cmds/rsync : The rsync command to use when syncing
         files.
     /disco/server/uri : The rsync URI from which to fetch module definitions.
     /disco/NODE_NAME/modules : This list defines the modules to install 
@@ -119,7 +119,7 @@ default values can be found there in the client/server install before the first 
     /disco/NODE_NAME/parameters : This tree defines all configuration 
         parameters for the node not related to any module in particular.
 
-Some special parameters are provided to the client, that do not exist on the paramters tree until
+Some special parameters are provided to the client, that do not exist on the parameters tree until
 runtime:
 
     /disco/NODE_NAME/current_module : This parameter defines the full 
